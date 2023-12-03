@@ -41,6 +41,7 @@ def searchStringinSam(string):
         print(f"String {string} não encontrada na memória!")
 
 def searchStringinRam(string):
+    random.shuffle(ram)
     startTime = time.perf_counter()
     found = False
     for w in ram:
@@ -58,10 +59,10 @@ def searchStringInFile(string):
     searchStringinRam(string)
     searchStringinSam(string)
     
-
-print('[1] Carregar Arquivo')
-print('[2] Buscar Informação')
-print('[3] Encerrar Programa')
+def menu():
+    print('[1] Carregar Arquivo')
+    print('[2] Buscar Informação')
+    print('[3] Encerrar Programa')
 
 opInt = 0
 
@@ -69,6 +70,7 @@ sam = []
 ram = []
 
 while (opInt != 3):
+    menu()
     op = input('Digite a opção desejada: ')
 
     try:
